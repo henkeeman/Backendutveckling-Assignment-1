@@ -12,15 +12,22 @@
 
 body{
     /* background-color: #001219; */
-    background-color: #f8f9fa;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
 }
 
 h1{
     font-family: 'Roboto', sans-serif;
-    color: #343a40;
+    color: #FFFFFF;
     font-weight: 900;
+}
+label{
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
 }
 
 .errands-form{
@@ -28,4 +35,67 @@ h1{
     justify-content: center;
     align-items: center;
 
+}
+
+.homepage-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    background-color: #1F2B41;
+    padding: 40px;
+    border-radius: 40px;
+}
+
+.errands-form-bar-input{
+    width: 300px;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+
+}
+.errands-form-bar-input:focus{
+    outline: none;
+}
+.errands-form-desc-input{
+    max-width: 350px;
+    max-height: 160px;
+    min-height: 60px;
+    min-width: 300px;
+    height: 120px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+.errands-form-desc-input:focus{
+    outline: none;
+
+}
+.errend-options{
+    width: 150px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+
+}
+.errend-options:focus{
+    outline: none;
+}
+.errands-form-submit-btn{
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    outline: none;
+    border: none;
 }

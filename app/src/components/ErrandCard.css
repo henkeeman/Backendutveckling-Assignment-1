@@ -1,0 +1,22 @@
+.errand-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #1F2B41;
+    width: 600px;
+    border-color: #2F394C;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 0 3px 30px 3px #a7004823;
+}
+.errand-card-line{
+    background-color: #A70048;
+    height: 4px;
+}
+.card-text
+{
+    color: #FFFFFF;
+    max-width: 540px;
+}

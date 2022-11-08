@@ -1,0 +1,8 @@
+.card-page-listings{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 75px;
+}
