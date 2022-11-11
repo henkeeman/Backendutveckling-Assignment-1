@@ -5,6 +5,8 @@ import axios from 'axios';
 const ErrandCard = (errand) => {
 
     const [selectValue, setSelectValue] = useState(errand.props.status);
+    let date = new Date(Date.parse(errand.props.created));
+    let dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + (date.getDate() + " " + (date.getHours()) + ":" + (date.getMinutes()));
 
     const changeStatus = async (e) => {
         //   
@@ -17,6 +19,7 @@ const ErrandCard = (errand) => {
       setSelectValue(e.target.value);
       changeStatus(e);
     };
+
   return (
     <div>
         <div className='errand-card-line'>
@@ -35,6 +38,7 @@ const ErrandCard = (errand) => {
             </select>
 
             <h3 className='card-text'>{errand.props.email}</h3>
+            <h3 className='card-text'>{dateString}</h3>
 
 
         </div>
