@@ -15,7 +15,6 @@ const ErrandsPage = () => {
     const getAllProducts = async () => {
     await axios.get("https://localhost:7090/api/Errands")
     .then(resp => {
-      console.log(resp.data[1].description)
       console.log(resp.data)
       setErrandCards(resp.data)
     }) 
