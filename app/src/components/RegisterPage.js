@@ -13,7 +13,7 @@ const RegisterPage = () => {
   // const emailRef = useRef();
 
   function handleSubmit(event) {
-    // event.preventDefault();
+    event.preventDefault();
     axios.post('https://localhost:7090/api/Users', {
       email: emailRef.current.value,
       name: firstNameRef.current.value,
@@ -22,6 +22,10 @@ const RegisterPage = () => {
     })
     .then(function (response) {
       console.log(response);
+      emailRef.current.value = "";
+      firstNameRef.current.value = "";
+      lastNameRef.current.value = "";
+      phoneNrRef.current.value = "";
     })
     .catch(function (error) {
       console.log(error);

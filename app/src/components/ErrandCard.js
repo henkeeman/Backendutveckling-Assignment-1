@@ -57,6 +57,7 @@ const ErrandCard = (errand) => {
               <h4 className='card-text'>{errand.props.user.name} </h4>
               <h4 className='card-text'>{errand.props.user.lastName} </h4>
             </div>
+            <h4 className='card-text'>{errand.props.user.phoneNr}</h4>
             <h3 className='card-text'>{dateString}</h3>
 
 

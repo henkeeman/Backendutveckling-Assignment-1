@@ -3,6 +3,8 @@ import ErrandCard from './ErrandCard'
 import axios from 'axios';
 import '../components/ErrandsPage.css'
 
+
+
 const ErrandsPage = () => {
 
     const [errandCards, setErrandCards] =  useState();
@@ -16,7 +18,19 @@ const ErrandsPage = () => {
     await axios.get("https://localhost:7090/api/Errands")
     .then(resp => {
       console.log(resp.data)
-      setErrandCards(resp.data)
+      let errandsSort = resp.data;
+
+      errandsSort.sort((a, b) => {
+        const timeA = a.created;
+        const timeB = b.created;
+        if (timeA > timeB)
+          return -1;
+        else if (timeA < timeB)
+          return 1;
+        return 0; //Ifall samma tid
+      });
+      
+      setErrandCards(errandsSort)
     }) 
     }
 

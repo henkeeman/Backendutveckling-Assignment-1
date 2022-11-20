@@ -35,7 +35,7 @@ const HomePage = () => {
 
   
   return (
-    <div>
+    <div className='homepage'>
         <div className='errands-form' >
             <form id="form" className='homepage-form' onSubmit={handleSubmit}>
                 <label>
@@ -61,15 +61,27 @@ const HomePage = () => {
                 
                 <input className='errands-form-submit-btn' type="submit" value="Submit" />    
 
-        </form>
-        
-
+            </form>
         </div>
+
        
 
 
-        <div className='errands'>
+        <div className='errands-information'>
+          <div>
+            <h3>
+              Börja med att regristrera ett konto.
+              <br/>
+              Konton måste ha olika e-postadresser.
+              <br/>
+              För att koppla events med kontot du skapat behöver du använda samma mail som kontot.
+              <br/>
+              Du hittar sedan eventet du skapat på Errands pagen.
+              
 
+
+            </h3>
+          </div>
         </div>
 
 
