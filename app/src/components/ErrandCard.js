@@ -1,12 +1,25 @@
 import React,{useState} from 'react'
 import '../components/ErrandCard.css'
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 const ErrandCard = (errand) => {
 
     const [selectValue, setSelectValue] = useState(errand.props.status);
     let date = new Date(Date.parse(errand.props.created));
-    let dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + (date.getDate() + " " + (date.getHours()) + ":" + (date.getMinutes()));
+    let dateMin;
+    let dateHours;
+      if(date.getMinutes() < 10)
+        dateMin = ("0" + date.getMinutes());
+      else
+        dateMin = date.getMinutes()
+      if(date.getHours() < 10)
+        dateHours = ("0" + date.getHours());
+      else
+        dateHours = date.getHours()  
+
+    
+    let dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + (date.getDate() + " " + (dateHours) + ":" + (dateMin));
 
     const changeStatus = async (e) => {
         //   
@@ -27,7 +40,9 @@ const ErrandCard = (errand) => {
         </div>
         
         <div className='errand-card'>
-            <h1 className='card-text'>{errand.props.title}</h1>
+          <Link to={'/errands/' + errand.props.id}>
+            <h1 href="/hej" className='card-text'>{errand.props.title}</h1>
+          </Link>
 
             <h2 className='card-text'>{errand.props.description}</h2>
 
@@ -37,7 +52,12 @@ const ErrandCard = (errand) => {
                 <option value="3">Klar</option>
             </select>
 
-            <h3 className='card-text'>{errand.props.email}</h3>
+            <h3 className='card-text'>{errand.props.user.email}</h3>
+            <div className='card-text-names'>
+              <h4 className='card-text'>{errand.props.user.name} </h4>
+              <h4 className='card-text'>{errand.props.user.lastName} </h4>
+            </div>
+            <h4 className='card-text'>{errand.props.user.phoneNr}</h4>
             <h3 className='card-text'>{dateString}</h3>
 
 
